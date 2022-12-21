@@ -3,6 +3,7 @@ import os
 import click
 from flask_cors import CORS
 from stock_trader import create_app, db
+from stock_trader.models.trade import Trade
 
 app = create_app(os.getenv("FLASK_ENV", "development"))
 CORS(app)
@@ -12,6 +13,7 @@ CORS(app)
 def shell():
     return {
         "db": db,
+        "Trade": Trade,
     }
 
 
