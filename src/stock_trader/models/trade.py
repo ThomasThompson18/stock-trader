@@ -18,6 +18,7 @@ class Trade(db.Model):
     __tablename__= "trade"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    ticker = db.Column(db.String, nullable=False, default="SPY")
     buy_price = db.Column(db.Integer, nullable=False, default = 0)
     sell_price = db.Column(db.Integer, nullable=True)
     is_profit = db.column(db.Boolean, nullable=True)
